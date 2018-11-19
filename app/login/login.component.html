@@ -1,0 +1,14 @@
+<FlexboxLayout>
+    <StackLayout class="form" [class.dark]="!isLoggingIn">
+        <Image src="~/images/logo2.png"></Image>
+
+        <TextField hint="Email" keyboardType="email" autocorrect="false"
+            autocapitalizationType="none" [(ngModel)]="user.email" class="input input-border"></TextField>
+        <TextField hint="Clave" secure="true" [(ngModel)]="user.password"
+            class="input input-border"></TextField>
+        <Button [text]="isLoggingIn ? 'Iniciar Sesion' : 'Registrarse'" class="btn btn-primary"
+            (tap)="submit()"></Button>
+        <Button [text]="isLoggingIn ? 'Registrarse' : 'Volver al login'"
+            (tap)="toggleDisplay()"></Button>
+    </StackLayout>
+</FlexboxLayout>
